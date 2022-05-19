@@ -14,7 +14,7 @@
 
  #### Screenshot of the app running in the browser
  
-   <img src="\client\src\images\textonomy.png" alt="screenshot of application" width="700"/><br>
+ <img src="./client/src/images/textonomy.PNG" alt="screenshot of application" width="500"/><br>
 
   ### Live link: [Live Link](https://textonomy-text-editor.herokuapp.com/)
 
