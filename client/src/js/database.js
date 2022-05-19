@@ -19,7 +19,7 @@ export const putDb = async (content) => {
   const textonomyDb = await openDB('textonomy', 1);
   const tx = textonomyDb.transaction('textonomy', 'readwrite');
   const store = tx.objectStore('textonomy');
-  const request = store.put({ value: content });
+  const request = store.put({ id: 1, value: content });
   const result = await request;
   console.log('🚀 - data saved to the database', result);
 };
@@ -33,8 +33,8 @@ export const getDb = async () => {
   const request = store.get(1);
   console.log('does the request exist?', request);
   const result = await request;
-  console.log('result.value', result);
-  return result;
+  console.log('result.content', result.value);
+  return result.value;
 };
 
 initdb();
