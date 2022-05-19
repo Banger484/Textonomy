@@ -31,6 +31,7 @@ export const getDb = async () => {
   const tx = textonomyDb.transaction('textonomy', 'readonly');
   const store = tx.objectStore('textonomy');
   const request = store.get(1);
+  console.log('does the request exist?', request);
   const result = await request;
   console.log('result.value', result);
   return result;

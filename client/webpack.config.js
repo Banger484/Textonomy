@@ -20,7 +20,8 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Textonomy'
+        title: 'Textonomy',
+        favicon: './favicon.ico'
       }),
      
       new InjectManifest({
@@ -34,8 +35,8 @@ module.exports = () => {
         name: 'Textonomy',
         short_name: 'Textonomy',
         description: 'a simple text editor',
-        background_color: '#225ca3',
-        theme_color: '#225ca3',
+        background_color: '#011936',
+        theme_color: '#011936',
         start_url: '/',
         publicPath: '/',
         icons: [
