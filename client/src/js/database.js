@@ -14,25 +14,24 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-  const textonomyDB = await openDB('textonomy', 1)
-  const tx = textonomyDB.transaction('textonomy', 'readwrite')
-  const store = tx.objectStore('textonomy')
-  const request =store.add(content)
-
+  console.log('PUT to the database');
+  console.log(content);
+  const textonomyDb = await openDB('textonomy', 1);
+  const tx = textonomyDb.transaction('textonomy', 'readwrite');
+  const store = tx.objectStore('textonomy');
+  const request = store.put({ value: content });
   const result = await request;
-
-  console.log('🚀 - data save successful!', result);
+  console.log('🚀 - data saved to the database', result);
 };
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
-  const textonomyDB = await openDB('textonomy', 1);
-  const tx = textonomyDB.transaction('textonomy', 'readonly');
-  const store = tx.objectStore('textonomy')
-  const request = store.getAll()
-
+  console.log('GET from the database');
+  const textonomyDb = await openDB('textonomy', 1);
+  const tx = textonomyDb.transaction('textonomy', 'readonly');
+  const store = tx.objectStore('textonomy');
+  const request = store.get(1);
   const result = await request;
-
   console.log('result.value', result);
   return result;
 };
